@@ -1,0 +1,22 @@
+POST http://127.0.0.1:8000/users/login/
+Content-Type: application/json
+
+{"username":"admin","password":"12345"}
+
+###
+
+POST http://127.0.0.1:8000/group/group_creation/
+Content-Type: application/json
+Authorization:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc0Njk4MjA1LCJpYXQiOjE3NzQ2OTc5MDUsImp0aSI6IjNlN2IyNzc5MGFjMDRjYjdiMzFiYTc4MWNkZDI0NDA3IiwidXNlcl9pZCI6IjEifQ.pVjzlJRV0WEpEnrl0spzSN-XZjBvhYoE5J1Qh0A6y4Y"
+
+
+{"username":"admin","password":"12345"}
+
+
+###
+
+POST http://127.0.0.1:8000/users/register/
+
+Content-Type: application/json
+
+{"first_name":"John","last_name":"Doe","email":"john.doe@example.com","username":"johndoe123","account_number":"1234567890","age":25,"password":"securePassword123","confirm_password":"securePassword123"}
