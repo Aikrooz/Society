@@ -1,12 +1,7 @@
-from django.db import models
+# models.py
 from django.contrib.auth.models import AbstractUser
-from django.core.validators import MaxValueValidator, MinValueValidator
-# Create your models here.
+from django.db import models
 
 class User(AbstractUser):
-    account_number=models.CharField()
-    age=models.IntegerField(
-        validators=[MinValueValidator(10)]
-    )
-
-
+    account_number = models.CharField(max_length=20)
+    age = models.IntegerField()

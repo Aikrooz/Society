@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'member',
     'payout',
     'rest_framework',
+    'schema_graph'
 
 ]
 
