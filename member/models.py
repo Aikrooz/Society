@@ -5,5 +5,5 @@ from group.models import GroupModel
 class Member(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     group=models.ForeignKey(GroupModel,on_delete=models.CASCADE)
-    payout_order=models.CharField()
-    joined_at=models.DateTimeField(auto_now=True)
+    payout_order=models.CharField(max_length=10)
+    joined_at=models.DateTimeField(auto_now_add=True)

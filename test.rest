@@ -7,7 +7,15 @@ Content-Type: application/json
 
 POST http://127.0.0.1:8000/group/group_creation/
 Content-Type: application/json
-Authorization:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc0Njk4MjA1LCJpYXQiOjE3NzQ2OTc5MDUsImp0aSI6IjNlN2IyNzc5MGFjMDRjYjdiMzFiYTc4MWNkZDI0NDA3IiwidXNlcl9pZCI6IjEifQ.pVjzlJRV0WEpEnrl0spzSN-XZjBvhYoE5J1Qh0A6y4Y"
+
+Authorization: "d9c93a63858aa30af14e195bc523b066d3f796e6"
+{
+  "name": "Test Group",
+  "contribution_amount": 1000,
+  "number_of_members": 10,
+  "cycle_length": 1,
+  "start_date": "2026-03-28"
+}
 
 
 {"username":"admin","password":"12345"}

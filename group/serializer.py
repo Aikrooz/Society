@@ -5,4 +5,4 @@ class GroupSerializer(serializers.ModelSerializer):
     group_creator=serializers.ReadOnlyField(source='group_creator.username')
     class Meta:
         model=GroupModel
-        fields=['group_creator','name','contribution_amount','number_of_memebers','cycle_length','start_date','status']
+        fields=['group_creator','name','contribution_amount','number_of_members','cycle_length','start_date','status']

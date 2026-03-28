@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from .serializers import RegisterSerializer
+from django.shortcuts import render,get_object_or_404
+from rest_framework.decorators import api_view
+from .serializers import RegisterSerializer,UserSerializer
 from rest_framework.views import APIView
 from django.http import Http404
 from rest_framework import status
@@ -9,6 +10,17 @@ from rest_framework.parsers import JSONParser
 from .models import User
 from django.db import IntegrityError
 # Create your views here.
+
+@api_view(['POST'])
+def login(request):
+    user = get_object_or_404(User, username=request.data['username'])
+    if not user.check_password(request.data['password']):
+        return Response("missing user", status=status.HTTP_404_NOT_FOUND)
+    token, created = Token.objects.get_or_create(user=user)
+    serializer = UserSerializer(user)
+    return Response({'token': token.key, 'user': serializer.data})
+
+
 
 class RegisterView(APIView):
     parser_classes = [JSONParser]

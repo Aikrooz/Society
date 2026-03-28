@@ -1,8 +1,15 @@
 # serializers.py
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
+from .models import User
 
-User = get_user_model()
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User 
+        fields = ['id', 'username', 'password', 'email']
+
+
+
 
 class RegisterSerializer(serializers.ModelSerializer):
     confirm_password = serializers.CharField(write_only=True)
