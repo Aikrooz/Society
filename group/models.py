@@ -11,7 +11,7 @@ STATUS =(
 
 class GroupModel(models.Model):
     name=models.CharField()
-    group_creator=models.ForeignKey(User,on_delete=models.CASCADE)
+    group_creator=models.ForeignKey(User,on_delete=models.CASCADE,related_name='group_creator')
     contribution_amount=models.PositiveIntegerField([MinValueValidator(1000)])
     number_of_memebers=models.SmallIntegerField(
         validators=[MinValueValidator(10)]
@@ -21,3 +21,4 @@ class GroupModel(models.Model):
     )
     start_date=models.DateField()
     status=models.CharField(choices=STATUS,default='Active')
+    date_created=models.DateTimeField(auto_created=True)
