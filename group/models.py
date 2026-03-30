@@ -22,3 +22,7 @@ class GroupModel(models.Model):
     start_date=models.DateField()
     status=models.CharField(choices=STATUS,default='Active', max_length=20)
     date_created=models.DateTimeField(auto_now_add=True)
+
+
+    def total_amount(self):
+        return self.contribution_amount * self.number_of_members

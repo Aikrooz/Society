@@ -22,3 +22,16 @@ class GroupView(APIView):
         groups=GroupModel.objects.all()
         serializer=GroupSerializer(groups,many=True)
         return Response(serializer.data)
+    
+
+class SingleGroupView(APIView):
+    permission_classes=[permissions.IsAuthenticated]
+
+    def get(self,request,id):
+        single_group=GroupModel.objects.filter(id=id)
+        if single_group.exists():
+            serializer=GroupSerializer(single_group,many=True)
+            return Response(serializer.data)
+        return Response("NO data found")
+    
+    

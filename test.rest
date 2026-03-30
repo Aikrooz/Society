@@ -10,7 +10,7 @@ Content-Type: application/json
 
 Authorization: "d9c93a63858aa30af14e195bc523b066d3f796e6"
 {
-  "name": "Test Group",
+  "name": "Dangote Wss",
   "contribution_amount": 1000,
   "number_of_members": 10,
   "cycle_length": 1,
